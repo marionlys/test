@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1> øving 3</h1>
+
+<!--oppgave 1-->
+<h1> skriv inn et tall</h1>
+Skriv inn et tall:
+<br> <input type="number" placeholder="1" id="tall">
+<br><br>
+<button onclick="knapp1()">regn ut</button>
+<br><br><br>
+<div id="output"></div>
+
+<!--oppgave 2-->
+<h1> er du myndig?</h1>
+Alder: <br>
+ <input type="text" id="alder">
+<br><br>
+<button onclick="knapp2()">spent no </button>
+<br><br><br>
+<div id="utdata"></div>
+
+<!--oppgave 3-->
+<h1> tippekamp!</h1>
+resultat: <br> <input type="text" id="HUB">
+<br><br>
+<button onclick="knapp3()">trykk for solide resultat!</button>
+<div id="resultat"></div>
+<br><br><br>
+
+<!--oppgave 4-->
+resultat: <input type="text" id="tippe">
+<br><br>
+<button onclick="knapp4()"> trykk her for å tippe</button>
+
+<p id="utmeddatan"></p>
+
+<!--oppgave 5-->
+
+
+<!--oppgave 6-->
+<h1> bussbillett</h1>
+alder: <br> <input type="number" id="age">
+<br><br>
+kilometeravstand: <br> <input type="number" id="kilometer">
+<br><br>
+<button onclick="knapp6()"> Regn ut kostnaden</button>
+<br><br>
+Pris <p id="dataut"></p> kr
+
+
+<script>
+//oppgave1
+function knapp1() {
+
+    let tall = document.getElementById("tall").value;
+
+    let dobbelt = tall * 2
+    let tredobbelt = tall * 3
+    let halvparten = tall / 2
+    let segsjølv = tall * tall
+
+document.getElementById("output").innerHTML = "Halvparten er: " + halvparten + ", det dobbelte er: " + dobbelt + ", det tredobbelte er: "
++ tredobbelt + ", ganget med seg selv er: " + segsjølv
+}
+
+
+//oppgave2
+function knapp2() {
+let alder = document.getElementById("alder").value;
+
+let svar;
+if(alder>18 && alder<67){
+svar="Du er myndig, gralla"
+}
+if(alder>=67){
+svar="gamlis"
+}
+if(alder<18){
+    svar="ikkje myndig"
+}
+document.getElementById("utdata").innerHTML = svar;
+}
+
+//oppgave3
+
+function knapp3() {
+    let HUB = document.getElementById("HUB").value.toLowerCase();
+    let ans;
+    if (HUB== "h") {
+        ans = "hjemmeseier";
+    }
+else if(HUB == "u") {
+    ans = "Uavgjort";
+}
+else if(HUB == "b") {
+    ans = "Borteseier";
+}
+document.getElementById("resultat").innerHTML = ans;
+}
+
+//oppgave4
+function knapp4() {
+    console.log("hei")
+    let tippe = document.getElementById("tippe").value;
+    let svar;
+
+    switch(tippe){
+        case "H":
+            document.getElementById("utmeddatan").innerHTML = "Hjemme";
+            break;
+        case "U":
+            document.getElementById("utmeddatan").innerHTML = "uavgjort";
+            break;
+        case "B":
+            document.getElementById("utmeddatan").innerHTML = "borteseier";
+            break;
+        default:
+            document.getElementById("utmeddatan").innerHTML = "skriv inn B, H eller U" ;
+    }
+}
+//oppgave6
+
+function knapp6() {
+let kilometer = document.getElementById("kilometer").value;
+let alder = document.getElementById("age").value;
+
+let pris = kilometer * 3.52;
+if (alder < 12){
+    pris = (kilometer *3.52) *0.5
+}
+if (alder >67){
+    pris = (kilometer *3.52) * 0.8;
+}
+document.getElementById("dataut").innerHTML = pris
+
+
+}
+
+</script>
+
+
+</body>
+</html>

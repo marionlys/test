@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- oppgave 1-->
+    <h1>oblig to tjohei</h1>
+    <h2>wi</h2>
+    
+    <p id="demo"></p>
+    <br><br>
+    <p> skriv her :D</p>
+    <br>
+
+    <!---oppgave 2-->
+    Fornavn <br> <input id="fnavn" type="text">
+    <br>
+    Mellomnavn <br> <input id="mnavn" type="text">
+    <br>
+    Etternavn <br> <input id="enavn" type="text">
+    <br>
+    <button id="knapp">trykk</button>
+    <div id="output">
+    </div>
+    <br>
+
+    <!--oppgave 3-->
+    <input type="text" id="live">
+    <br>
+    <div id="LiveOutput"> </div>
+
+
+    <script>
+//oppgave1
+        window.onload = myFunction() //poppe opp med en gang vinduet åpnes
+
+    function myFunction() {
+    let person = prompt("Navn pls");
+    let color = prompt("favoritt farge?")
+     {
+        document.getElementById("demo").innerHTML =
+        "Hei " + person + "! lika du " + color + "?";
+      }
+    }
+    //oppgave2
+    document.getElementById("knapp").onclick = function() {
+    let fnavn = document.getElementById("fnavn").value
+    let mnavn = document.getElementById("mnavn").value
+    let enavn = document.getElementById("enavn").value
+
+    console.log("hei")
+    
+    document.getElementById("output").innerHTML = 
+    "du hete " + fnavn + " " + mnavn + " " + enavn;
+
+    }
+    //oppgave3
+    let input = document.getElementById("live");
+    let output = document.getElementById("LiveOutput");
+
+    input.oninput = function(){
+        output.innerHTML = this.value;
+    }
+
+    </script>
+
+</body>
+</html>
